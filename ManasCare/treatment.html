@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treatment & Medication | ManasCare</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="section">
+  <h2>Treatment & Medication</h2>
+  <p>Follow step-by-step Ayurvedic methods to improve your mental health.</p>
+
+  <!-- Step Buttons -->
+  <div class="step-buttons">
+    <button class="btn" onclick="showStep('yoga')">Yoga</button>
+    <button class="btn" onclick="showStep('ahara')">Ahara (Diet)</button>
+    <button class="btn" onclick="showStep('vichar')">Vichar (Mindset)</button>
+  </div>
+
+  <!-- Step Content -->
+  <div id="stepContent" class="step-content">
+
+    <!-- Yoga Step -->
+    <div id="yoga" class="step-box">
+      <h3>Yoga for Mental Health</h3>
+      <p>Yoga helps reduce stress, improve focus, and balance emotions.</p>
+      <ul>
+        <li><b>Step 1:</b> Start with 10 minutes of deep breathing (Pranayama).</li>
+        <li><b>Step 2:</b> Practice Surya Namaskar (Sun Salutation) for 10–15 mins.</li>
+        <li><b>Step 3:</b> Do meditation for 10 mins to calm your mind.</li>
+        <li><b>Step 4:</b> End with light stretching and relaxation.</li>
+      </ul>
+    </div>
+
+    <!-- Ahara Step -->
+    <div id="ahara" class="step-box hidden">
+      <h3>Ahara (Diet for Mental Health)</h3>
+      <p>Ayurvedic diet helps balance mind and body.</p>
+      <ul>
+        <li><b>Step 1:</b> Eat fresh fruits and vegetables daily.</li>
+        <li><b>Step 2:</b> Include whole grains like oats, barley, and rice.</li>
+        <li><b>Step 3:</b> Drink herbal teas (Tulsi, Ashwagandha, Brahmi).</li>
+        <li><b>Step 4:</b> Avoid processed foods, excess sugar, and caffeine.</li>
+        <li><b>Step 5:</b> Eat at regular intervals and stay hydrated.</li>
+      </ul>
+    </div>
+
+    <!-- Vichar Step -->
+    <div id="vichar" class="step-box hidden">
+      <h3>Vichar (Mindset & Positive Thinking)</h3>
+      <p>Mindset practices improve emotional resilience and reduce stress.</p>
+      <ul>
+        <li><b>Step 1:</b> Practice daily gratitude journaling.</li>
+        <li><b>Step 2:</b> Use affirmations to build self-confidence.</li>
+        <li><b>Step 3:</b> Practice mindfulness and meditation.</li>
+        <li><b>Step 4:</b> Reduce negative media and social media consumption.</li>
+        <li><b>Step 5:</b> Connect with nature and practice deep breathing.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function showStep(step) {
+  const steps = document.querySelectorAll(".step-box");
+  steps.forEach(s => s.classList.add("hidden")); // hide all
+  document.getElementById(step).classList.remove("hidden"); // show selected
+}
+</script>
+
+</body>
+</html>

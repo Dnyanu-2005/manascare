@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Assistant | ManasCare</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="section">
+  <h2>Virtual Assistant</h2>
+  <p>Get mental health guidance through our interactive AI assistant. Use Gemini AI or our local chatbot.</p>
+
+  <!-- Gemini AI Button -->
+  <div class="gemini-container">
+    <button class="btn" onclick="openGemini()">Open Gemini AI Chat</button>
+  </div>
+
+  <hr style="margin:30px 0; border:1px solid #ddd;">
+
+  <!-- Local Chatbot -->
+  <div class="chat-container">
+    <div id="chatbox" class="chatbox">
+      <p><b>Bot:</b> Hello! I am your virtual assistant. How can I help you today?</p>
+    </div>
+    <input type="text" id="userInput" placeholder="Type your message here..." />
+    <button class="btn" onclick="sendMessage()">Send</button>
+  </div>
+</section>
+
+<script>
+// Open Gemini AI in a new tab
+function openGemini() {
+  window.open("https://gemini.openai.com/", "_blank");
+}
+
+// Local chatbot logic
+const chatbox = document.getElementById("chatbox");
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const userText = input.value.trim();
+  if(!userText) return;
+
+  // Show user message
+  const userMsg = document.createElement("p");
+  userMsg.innerHTML = "<b>You:</b> " + userText;
+  userMsg.style.textAlign = "right";
+  chatbox.appendChild(userMsg);
+
+  // Simple bot response
+  const botMsg = document.createElement("p");
+  botMsg.innerHTML = "<b>Bot:</b> Thank you for your message! A consultant will contact you soon.";
+  chatbox.appendChild(botMsg);
+
+  input.value = '';
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
+</script>
+
+</body>
+</html>

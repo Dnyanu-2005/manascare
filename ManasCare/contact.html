@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | ManasCare</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<section class="contact-section">
+  <div class="contact-container">
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or need guidance?  
+        Send us a message and we’ll get back to you as soon as possible.
+      </p>
+      <ul>
+        <li><b>Email:</b> manascare.support@gmail.com</li>
+        <li><b>Phone:</b> +91 8999294208</li>
+        <li><b>Address:</b> Amravati, Maharashtra, India</li>
+      </ul>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+      <form id="contactForm" onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Team Members Section -->
+  <div class="team-section">
+    <h2>Our Team</h2>
+    <p>Meet the experts behind ManasCare who are ready to assist you.</p>
+    <div class="team-container">
+      
+      <div class="team-member">
+        <h3>Hooner Agraval</h3>
+        <p><b>Phone:</b> 8379936508</p>
+        <p><b>Role:</b> Founder & Lead Developer</p>
+        <p>Hooner leads the technical development and ensures the platform is smooth and responsive.</p>
+      </div>
+
+      <div class="team-member">
+        <h3>Hemangi Patil</h3>
+        <p><b>Phone:</b> 9373439081</p>
+        <p><b>Role:</b> Content & Ayurveda Expert</p>
+        <p>Hemangi ensures that all the treatment and mental health content is accurate and scientifically backed.</p>
+      </div>
+
+      <div class="team-member">
+        <h3>Shweta Shekar</h3>
+        <p><b>Phone:</b> 8446926466</p>
+        <p><b>Role:</b> UX/UI Designer</p>
+        <p>Shweta designs the interface and makes sure the website is user-friendly and visually appealing.</p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<script>
+function sendEmail(event){
+  event.preventDefault(); 
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let subject = encodeURIComponent("Message from " + name + " | ManasCare");
+  let body = encodeURIComponent(
+    "Name: " + name + "\n" +
+    "Email: " + email + "\n\n" +
+    "Message:\n" + message
+  );
+
+  window.location.href = "mailto:manascare.support@gmail.com?subject=" + subject + "&body=" + body;
+}
+</script>
+</body>
+</html>
